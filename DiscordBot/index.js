@@ -1,7 +1,5 @@
-const { Client, IntentsBitField } = require("discord.js");
-const myIntents = new IntentsBitField();
-myIntents.add(IntentsBitField.Flags.GuildPresences, IntentsBitField.Flags.GuildMembers, IntentsBitField.Flags.Guilds);
-const client = new Client({ intents: myIntents });
+const { Client, Events, GatewayIntentBits } = require('discord.js');
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const fs = require("fs");
 const path = require("path");
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "Config", "config.json")).toString());
