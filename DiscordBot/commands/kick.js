@@ -57,7 +57,7 @@ module.exports = {
             else msg = `There are no current active sessions by ${targetUser.username}`;
         }
     
-        let embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
         .setAuthor({ name: "Moderation", iconURL: "https://cdn.discordapp.com/attachments/927739901540188200/1020458073019666492/unknown.png" })
         .setFields(
             { name: "Message", value: msg },

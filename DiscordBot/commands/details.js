@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require('discord.js');
 const User = require("../../model/user.js");
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
         const user = await User.findOne({ discordId: interaction.user.id }).lean();
         if (!user) return interaction.reply({ content: "You do not have a registered account!", ephemeral: true });
 
-        let embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
         .setColor("#56ff00")
         .setAuthor({ name: interaction.user.tag, iconURL: interaction.user.avatarURL() })
         .setFields(

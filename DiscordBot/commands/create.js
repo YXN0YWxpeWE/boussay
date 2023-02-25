@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require('discord.js');
 const functions = require("../../structs/functions.js");
 
 module.exports = {
@@ -36,7 +37,7 @@ module.exports = {
 
         await functions.registerUser(discordId, username, email, password).then(resp => {
             if (resp.status >= 400) {
-                let embed = new MessageEmbed()
+                const embed = new EmbedBuilder()
                 .setColor("#ff0000")
                 .setAuthor({ name: interaction.user.tag, iconURL: interaction.user.avatarURL() })
                 .setFields(
@@ -47,7 +48,7 @@ module.exports = {
                 return interaction.reply({ embeds: [embed], ephemeral: true })
             }
 
-            let embed = new MessageEmbed()
+            const embed2 = new EmbedBuilder()
             .setColor("#56ff00")
             .setAuthor({ name: interaction.user.tag, iconURL: interaction.user.avatarURL() })
             .setFields(
@@ -55,7 +56,7 @@ module.exports = {
             )
             .setTimestamp()
 
-            interaction.channel.send({ embeds: [embed] });
+            interaction.channel.send({ embeds: [embed2] });
             interaction.reply({ content: "You successfully created an account!", ephemeral: true })
         })
     }

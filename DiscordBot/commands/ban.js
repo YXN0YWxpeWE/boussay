@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const { EmbedBuilder } = require('discord.js');
 const User = require("../../model/user.js");
 const tokens = require("../../model/tokens.js");
 const fs = require("fs");
@@ -55,7 +56,7 @@ module.exports = {
             msg = `Successfully banned ${targetUser.username}`;
         }
     
-        let embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
         .setAuthor({ name: "Moderation", iconURL: "https://cdn.discordapp.com/attachments/927739901540188200/1020458073019666492/unknown.png" })
         .setFields(
             { name: "Message", value: msg },

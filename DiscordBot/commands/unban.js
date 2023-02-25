@@ -33,7 +33,7 @@ module.exports = {
             msg = `Successfully unbanned ${targetUser.username}`;
         }
     
-        let embed = new MessageEmbed()
+        const embed = new EmbedBuilder()
         .setAuthor({ name: "Moderation", iconURL: "https://cdn.discordapp.com/attachments/927739901540188200/1020458073019666492/unknown.png" })
         .setFields(
             { name: "Message", value: msg },

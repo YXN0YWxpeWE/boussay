@@ -1,5 +1,7 @@
-const { Client, Intents } = require("discord.js");
-const client = new Client({ intents: [ Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES ] });
+const { Client, IntentsBitField } = require("discord.js");
+const myIntents = new IntentsBitField();
+myIntents.add(IntentsBitField.Flags.GuildPresences, IntentsBitField.Flags.GuildMembers, IntentsBitField.Flags.Guilds);
+const client = new Client({ intents: myIntents });
 const fs = require("fs");
 const path = require("path");
 const config = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "Config", "config.json")).toString());
@@ -19,8 +21,6 @@ client.once("ready", () => {
 });
 
 client.on("interactionCreate", interaction => {
-    if (!interaction.isApplicationCommand()) return;
-
     if (fs.existsSync(`./DiscordBot/commands/${interaction.commandName}.js`)) {
         require(`./commands/${interaction.commandName}.js`).execute(interaction);
     }
