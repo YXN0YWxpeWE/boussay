@@ -6,6 +6,6 @@
     "mongodb": {
         "database": "mongodb+srv://quantumlogin:KPj7P5zX7vwaTR2Q@accountcluster.zm06nok.mongodb.net/?retryWrites=true&w=majority"
     },
-    "matchmakerIP": "127.0.0.1:81",
+    "matchmakerIP": "127.0.0.1:4192",
     "gameServerIP": "127.0.0.1:7777"
 }

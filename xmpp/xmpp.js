@@ -11,7 +11,7 @@ const tokens = require("../model/tokens.js");
 const User = require("../model/user.js");
 const Friends = require("../model/friends.js");
 
-const port = 81;
+const port = 4192;
 const wss = new WebSocket({ server: app.listen(port, () => log.xmpp(`XMPP and Matchmaker started listening on port ${port}`)) });
 const matchmaker = require("../matchmaker/matchmaker.js");
 
