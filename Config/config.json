@@ -1,0 +1,11 @@
+{
+    "moderators": ["discordId"],
+    "discord": {
+        "bot_token": "MTA3ODMzNjU4MzQzMTg5NzI4OQ.GHxIOR.M3xJ-pM81rexKytbHN2y47QHdHYjBarJME7XKw"
+    },
+    "mongodb": {
+        "database": "mongodb+srv://quantumlogin:KPj7P5zX7vwaTR2Q@accountcluster.zm06nok.mongodb.net/?retryWrites=true&w=majority"
+    },
+    "matchmakerIP": "127.0.0.1:81",
+    "gameServerIP": "127.0.0.1:7777"
+}
